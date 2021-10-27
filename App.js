@@ -1,21 +1,51 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, Alert, SafeAreaView,View, Button, TextInput} from 'react-native';
+
+
+// this is a comment
+
 
 export default function App() {
+  const [welcomeMessage, setWelcomeMessage] = useState("This is the default message.")
+
+  const ShowAlert = () => {
+    Alert.prompt(
+      "Enter Text",
+      "Please type what you would like to display",
+      [
+        { text: "Cancel",
+          style: "Cancel",
+          onPress: () => console.log("Cancel Button was pressed")
+
+        }, 
+        {
+          text: "Submit",
+          onPress: message => setWelcomeMessage(message)
+        }
+      ]
+    )
+  }
+
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>{welcomeMessage}</Text>
+
+      <TextInput placeholder="XXX-XXX-XXXX" autoCompleteType="tel" style={{padding: 10, borderColor: "black", borderWidth: 1}} />
+      <Button title="Click to change the message" onPress={() => ShowAlert()} />        
+      
     </View>
   );
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: 'white',
     justifyContent: 'center',
+    alignItems: "center"
   },
 });
