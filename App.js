@@ -36,6 +36,7 @@ export default function App() {
       <TextInput placeholder="XXX-XXX-XXXX" autoCompleteType="tel" style={{padding: 10, borderColor: "black", borderWidth: 1}} />
       <Button title="Click to change the message" onPress={() => ShowAlert()} />        
       <Text>Placed this here indicating a new branch.</Text>
+	  <Text>Adding another new textbox here.</Text>
     </View>
   );
 }
