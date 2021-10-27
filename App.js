@@ -5,6 +5,7 @@ import { StyleSheet, Text, Alert, SafeAreaView,View, Button, TextInput} from 're
 
 // this is a comment
 //Adding a comment here to see if it shows up
+//Adding a final comment to see if I understand what is going on here.
 
 export default function App() {
   const [welcomeMessage, setWelcomeMessage] = useState("This is the default message.")
